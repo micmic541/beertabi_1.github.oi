@@ -1,0 +1,228 @@
+@charset "utf-8";
+
+/*Global CSS*/
+
+html { font-size: 100%; }
+
+* { margin: 0; padding: 0; webkit-box-sizing: border-box; }
+
+img { width: 100%; }
+
+a, a:hover { color: #3e1300; font-weight: 500; }
+
+body { background: #f7f4f2; color: #3e1300; }
+
+header { background: #3e1300; }
+
+h2 { color: #c53b00; font-family: 'M PLUS Rounded 1c', sans-serif; }
+
+#header_inside { align-items: flex-end; }
+
+#wrapper { position: relative; top: 130px; }
+
+#button {
+    background: #3e1300;
+    border: none;
+    padding: .6rem 1.2rem;
+    border-radius: 100vh;
+    color: #d1cbc3;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    -webkit-appearance: none;
+    font-size: 1.2rem; 
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: ease all .3s;
+}
+
+#button:hover { opacity: .7; background: #c53b00; color: #d1cbc3; }
+
+/**disable default design for form**/
+form {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+form:focus, input:focus { outline: 0; }
+
+/*manage.php*/
+
+.form_manage input, .form_manage select { margin: 0.75rem;  max-width: 230px !important; }
+
+.form_manage label { margin-bottom: 0px; }
+
+table { white-space: nowrap; width: 100%; }
+
+table::-webkit-scrollbar { display:none; }
+
+th,td{
+  height: 100px;
+  vertical-align: middle;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+}
+
+td { color: #3e1300; background: #fff; }
+
+.title {
+  position: sticky;
+  top: 0;
+  color: #3e1300;
+  background: #d1cbc3;
+}
+
+.title:before{
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+/*manage_user.php*/
+
+.manage-table th:nth-child(odd), .magnage-table td:nth-child(odd){
+  width: 100%;
+}
+
+/*register_user.php*/
+
+.form_wrap, #finish_register_msg { 
+  align-items: center;
+  height: 72vh;
+  padding-left: 0px;
+  justify-content: center;
+}
+
+.form_wrap input { 
+    padding: 9px 50px;
+    margin: 5px 0;
+    border-radius: 100vh;
+    border: solid 1px #ccc;
+  }
+  
+  .form_wrap #button { padding: .6rem 2.2rem; }
+  
+  /*login.php*/
+  
+  .login_form #button { padding: .6rem 1vw !important; }
+  
+  /*finish_register.php*/
+  
+  #finish_register_msg a, #finish_register_msg a:hover, .button_box a { text-decoration: none; }
+  
+  /*top.php*/
+  
+  .top_bg {
+    height: 100vh; /* 全画面表示 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url(../img/beer_bg1.jpg);
+  }
+  
+  .overlay::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: rgb(0 0 0 / 12%);
+  }
+  
+  .button_box {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    justify-content: center;
+  }
+  
+  .button_box #button { padding: .8rem 2.2rem; }
+  
+  #ham { display: none; }
+  
+  @media (max-width: 767px) {
+    
+    #header_inside h2 { font-size: 5vw; }
+    
+    /*register_user.php*/
+    
+    .form_wrap, #finish_register_msg { height: 57vh; }
+    
+    .form_wrap input {
+      padding: 9px 20px;
+    }
+    
+    .form_wrap #button { padding: .6rem 8vw; }
+    
+    /*login.php*/
+    
+    .login_form #button, #finish_register_msg #button { font-size: .9em; }
+    
+    /*finish_register.php*/
+    
+    #finish_register_msg h4 { font-size: 4vw; }
+    
+    /*top.php*/
+    
+    .button_box #button { display: none; }
+    
+  	#ham { 
+  	  display: block;
+  	  position: relative;
+  	  width: 55px;
+  	  height: 55px;
+  	  margin-bottom: 9px;
+  	  top: 10px;
+  	  left: 0%;
+  	}
+  
+  	.ham_line {
+  		position: absolute; 
+  		left: 10px; 
+  		width: 35px; 
+  		height: 4px; 
+  		background-color: #c53b00; 
+  		transition: all .3s; 
+  	}
+  	
+  	.ham_line1 { top: 14px; }
+  	.ham_line2 { top: 26px; }
+  	.ham_line3 { top: 38px; }
+  	
+    /*nav*/
+    .menu { 
+    	color: #fff; 
+    	opacity: 0;
+    	height: 100%;
+    	width: 100%;
+    	background: #000;
+    	position: fixed;
+    	z-index: 3; 
+    	left: 0; 
+    	transition: all 1s; 
+    }
+    
+    .manu ul a { color: #fff; display: block !important; width: 300px; height: 50px; }
+    
+    .menu.clicked { 
+    	display: flex !important; 
+    	justify-content: center; 
+    	align-items: center; 
+    	opacity: .85; 
+    }
+    
+	.clicked .ham_line1 { transform: rotate(45deg); top: 20px; }
+	.clicked .ham_line2 { width: 0px; }
+	.clicked .ham_line3 { transform: rotate(-45deg); top: 20px; }
+      
+  }
